@@ -29,7 +29,7 @@ The following code will extract the train set and test set.
 
 It will obtain other informations like the features list, the activitives list and labels.
 
-```{r}
+```{r, warning=FALSE}
 
 library(dplyr)
 
@@ -64,7 +64,6 @@ names(strain)<-"subject"
 
 ## Merging train set, train activity and train subject
 train<-cbind(train, activity_train, strain)
-str(train)
 dim(train)
 
 ## Test set
@@ -89,7 +88,6 @@ names(stest)<-"subject"
 
 ## Merging test set, test activity and test subject
 test<-cbind(test, activity_test, stest)
-str(test)
 dim(test)
 
 ```
@@ -135,7 +133,6 @@ Now, the complete dataset will be subseted and will remain with only mean and st
 
 dataset_sub<-cbind(dataset[,mean_subsets], dataset[,sd_subsets], dataset[, 562:563])
 dim(dataset_sub)
-str(dataset_sub)
 head(dataset_sub)
 
 ```
